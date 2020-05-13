@@ -29,14 +29,14 @@ class AnnotatingRelationshipsApplicationTests {
 	@Test
 	public void canCreateAndSavePirateThatHasAShip() {
 
-		User user = new User("JJ");
+		User user = new User("Jeff");
 		userRepository.save(user);
 
 		Folder folder;
-		folder = new folder("potato");
+		folder = new folder("folder1");
 		folderRepository.save(folder);
 
-		File file = new File("J", ".txt", 1, folder);
+		File file = new File("file1", "txt", 32, folder1);
 		fileRepository.save(file);
 
 		file.addUser(user);

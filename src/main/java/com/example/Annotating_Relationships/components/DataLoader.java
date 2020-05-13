@@ -1,5 +1,6 @@
 package com.example.Annotating_Relationships.components;
 
+import org.apache.catalina.User;
 import com.example.Annotating_Relationships.models.File;
 import com.example.Annotating_Relationships.models.Folder;
 import com.example.Annotating_Relationships.models.User;
@@ -32,18 +33,18 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
 
         User jeff = new User("Jeff");
-        u;
+        userRepository.save(jeff);
 
-        Folder folder = new Folder("folder", jeff);
-        folderRepository.save(folder);
+        File file1 = new Folder("Ruby", "txt", 32, folder1);
+        fileRepository.save(file1);
 
-        File dump = new File("dump1", "txt", 24, folder);
-        fileRepository.save(dump);
+        Folder folder1 = new Folder("PDA", "Jeff");
+        folderRepository.save(folder1);
 
-        folder.addFile(dump);
-        jeff.addFolder
-
-        // Refer type S
+        jeff.addFolder(folder1);
+        userRepository.save(jeff);
+        folder1.addFile(file1);
+        folderRepository.save(folder1);
 
     }
 }
